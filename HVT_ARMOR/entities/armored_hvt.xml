@@ -1,0 +1,24 @@
+<Entities>
+    <Entity name="HVT" type="Human" fogOfWarVisibility="hidden" editorAutoHeight="false" tooltip="@tooltip_enemy_vip" editorTags="hvt" oldName="VIP">
+		<RenderObject3D model="data/models/humans/civilian_male_fat.khm" diffuseTex="data/models/humans/civilian_male_standard_03.dds"/>
+		<RenderObject3D model="data/models/humans/attachments/swat_sapper_vest.khm" diffuseTex="data/models/humans/attachments/swat_sapper_vest.dds" />
+		<RenderObject3D model="data/models/humans/attachments/swat_vestcollar.khm" diffuseTex="data/models/humans/attachments/swat_vestcollar.dds" />
+		<RenderObject3D model="data/models/humans/attachments/enemy_head_beard.khm" diffuseTex="data/models/humans/attachments/enemy_head.dds"/>
+		<AnimationSet name="civilian" />
+		<PhysicalParams health="100" />
+		<Breakable template="GenericHumanGibs" breakOnDamage="explosive" deleteOnDeath="false"/>
+		<Human type="BadGuy" isVIP="true">
+			<FOV degrees="90" distanceMeters="999"/>
+			<Brain startingBehavior="HVT" defaultBehavior="HVT" combatBehavior="HVT Combat" suppressionRecovery="80.0"/>
+			<Id name="@entity_human_vip" portrait="data/textures/portraits/enemy_vip.dds" gender="0" voicePack="enemy_leader"/>
+			<Traits chanceToInvestigate="0.0" chanceToAmbush="0.0"/>
+			<Mobility>
+				<MoveSpeed min="0.7" defaultMetersPerSec="1.83" max="10"/>
+				<TurnSpeed min="6" defaultMetersPerSec="10" max="20"/>
+			</Mobility>
+			<Equipment>
+                <Item name="NWS Vest Extended"/>
+			</Equipment>
+		</Human>
+	</Entity>
+</Entities>
